@@ -29,13 +29,19 @@ jobs:
     - name: CheckIn
       run: |
         user='${{ secrets.COOKIE }}'
+        alls='${{ secrets.S }}'
         
         
         user_list=()
+        s_list=()
         IFS="#"
         for u in ${user[*]}
         do
         user_list[${#user_list[*]}]=${u}
+        done
+        for s in ${alls[*]}
+        do
+        s_list[${#s_list[*]}]=${s}
         done
         user_num=${#user_list[*]}
         echo "共有 $user_num 个账号，即将开始签到"
@@ -43,7 +49,7 @@ jobs:
         do
         python3 check.py <<EOF
         ${user_list[$i]}
-        ${{secrets.S}}
+        ${{s_list[$i]}}
         ${{secrets.SCKEY}}
         EOF
         done
