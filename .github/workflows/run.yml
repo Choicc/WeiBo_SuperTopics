@@ -49,7 +49,7 @@ jobs:
         do
         python3 check.py <<EOF
         ${user_list[$i]}
-        ${{s_list[$i]}}
+        ${s_list[$i]}
         ${{secrets.SCKEY}}
         EOF
         done
