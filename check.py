@@ -373,10 +373,6 @@ class WeiBo:
 {self.get_log()}
 ```
 
-### ⚡考研倒计时:
-```
-{date}天
-```
 
 >
 > [GitHub项目地址](https://github.com/ReaJason/WeiBo_SuperTopics) 
