@@ -50,6 +50,7 @@ jobs:
         python3 check.py <<EOF
         ${user_list[$i]}
         ${s_list[$i]}
+        ${{secrets.PICK}}
         ${{secrets.SCKEY}}
         EOF
         done
