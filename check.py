@@ -1,3 +1,36 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Choicc 
+ReaJason
+/
+WeiBo_SuperTopics
+1
+11
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+WeiBo_SuperTopics/check.py /
+@ReaJason
+ReaJason First Commit
+Latest commit af8eacf 23 hours ago
+ History
+ 1 contributor
+427 lines (403 sloc)  15.3 KB
+  
+Code navigation is available!
+Navigate your code with ease. Click on function and method calls to jump to their definitions or references in the same repository. Learn more
+
 """
 @Title: 微博API
 @Author: ReaJason
@@ -372,8 +405,10 @@ class WeiBo:
 ```
 {self.get_log()}
 ```
-
-
+### ⚡考研倒计时:
+```
+{date}天
+```
 >
 > [GitHub项目地址](https://github.com/ReaJason/WeiBo_SuperTopics) 
 >
@@ -421,3 +456,15 @@ if __name__ == '__main__':
     sckey = input()
     check = WeiBo()
     check.daily_task(cookie=cookie, s=s, sckey=sckey)
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
