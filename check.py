@@ -79,7 +79,14 @@ NAME: {user["screen_name"]}
                 url=self.get_ch_url.format(since_id),
                 headers=self.headers
             )
-            ch_json = ch_res.json()["data"]["cards"][0]["card_group"]
+            # print(len(ch_res.json()["data"]["cards"]))
+            # print(ch_res.json()["data"]["cards"])
+            chg_list = []
+            for chg in ch_res.json()["data"]["cards"]:
+                chg_list.extend(chg["card_group"])
+            # ch_json = ch_res.json()["data"]["cards"][0]["card_group"]
+            ch_json = chg_list
+            # print(ch_json)
             for ch in ch_json:
                 if ch["card_type"] == "8":
                     ch_dict = {
@@ -151,6 +158,7 @@ NAME: {user["screen_name"]}
             url=self.check_url,
             params=check_data,
         )
+        print(check_res.json())
         errmsg = check_res.json().get('errmsg')
         if errmsg:
             msg = f'TopicName：{ch_dict["title"]}  s参数设置有误'
