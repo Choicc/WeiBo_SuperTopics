@@ -165,7 +165,7 @@ NAME: {user["screen_name"]}
             print(msg)
             self.log.append(msg)
             return msg
-        elif check_res.json()['result']=='388000':
+        elif check_res.json()['result']==388000:
             msg = f'TopicName：{ch_dict["title"]}  状态异常,需手动签到'
             print(msg)
             self.log.append(msg)
