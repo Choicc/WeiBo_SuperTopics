@@ -79,7 +79,7 @@ NAME: {user["screen_name"]}
                 url=self.get_ch_url.format(since_id),
                 headers=self.headers
             )
-            # print(len(ch_res.json()["data"]["cards"]))
+            print(len(ch_res.json()["data"]["cards"]))
             # print(ch_res.json()["data"]["cards"])
             chg_list = []
             for chg in ch_res.json()["data"]["cards"]:
@@ -165,7 +165,11 @@ NAME: {user["screen_name"]}
             print(msg)
             self.log.append(msg)
             return msg
-
+        elif check_res.json()['result']=='388000':
+            msg = f'TopicName：{ch_dict["title"]}  状态异常,需手动签到'
+            print(msg)
+            self.log.append(msg)
+            return msg
         else:
             c_msg = check_res.json()["msg"].replace("\n", "/")
             msg = f'TopicName：{ch_dict["title"]}--{ch_dict["level"][-4:]}\n' \
@@ -443,15 +447,6 @@ NAME: {user["screen_name"]}
         self.get_score_bang([i for i in ch_list if i["title"] == pick_name][0])
         self.log.append("```")
         self.server_push(sckey)
-
-
-def test():
-    cookie = "******"
-    s = "******"
-    pick = "喻言"
-    sckey = "*******"
-    check = WeiBo()
-    check.daily_task(cookie=cookie, s=s, sckey=sckey, pick_name=pick)
 
 
 if __name__ == '__main__':
