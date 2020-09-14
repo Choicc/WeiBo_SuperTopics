@@ -441,11 +441,11 @@ NAME: {user["screen_name"]}
         self.log.append("```")
         self.get_day_score()
         self.log.append("```")
-        print("开始打榜")
-        self.log.append("### 💓Pick：")
-        self.log.append("```")
-        self.get_score_bang([i for i in ch_list if i["title"] == pick_name][0])
-        self.log.append("```")
+        # print("开始打榜")
+        # self.log.append("### 💓Pick：")
+        # self.log.append("```")
+        # self.get_score_bang([i for i in ch_list if i["title"] == pick_name][0])
+        # self.log.append("```")
         self.server_push(sckey)
 
 
